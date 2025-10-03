@@ -3,13 +3,17 @@ import java.util.Scanner;
 
 public class promocaorelampago {
 
+
+    // onde recebe o valor da compra
     public static void main(String[] args) {
+        System.out.println("Informe o valor da compra");
         Scanner scanner = new Scanner(System.in);
         String valorCompra = scanner.nextLine();
         System.out.println(calcularDesconto(valorCompra));
         scanner.close();
     }
 
+    // onde vai ser calculado e dependendo da condição a mensagem criada
     public static String calcularDesconto(String valorCompra) {
         BigDecimal valor = new BigDecimal(valorCompra);
         BigDecimal valorComDesconto;
@@ -35,6 +39,7 @@ public class promocaorelampago {
                 mensagem = String.format("O valor é %.2f. recebeu desconto de 20%%. Novo valor %.2f.", valor, descontoPercentual);
 
             }
+            // onde a mensagem é printada
             return mensagem;
 
         }catch (NumberFormatException e) {
@@ -42,4 +47,5 @@ public class promocaorelampago {
 
         }
     }
+
 }
